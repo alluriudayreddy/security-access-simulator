@@ -1,0 +1,13 @@
+current_user = None
+
+def set_current_suer(user):
+    global current_user
+    current_user = user
+
+def get_current_user():
+    return current_user
+
+def logout():
+    global current_user
+    current_user = None
+    
