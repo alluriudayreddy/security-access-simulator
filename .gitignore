@@ -1,9 +1,7 @@
 __pycache__/
 *.pyc
-
 .env
 venv/
-
 logs/
-
-.DS_Store
+.vscode/
+Thumbs.db
