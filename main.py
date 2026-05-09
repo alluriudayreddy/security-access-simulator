@@ -43,14 +43,12 @@ if choice == "1":
     if not validate_username(username):
         print_separator()
         log_error("Invalid username entered.")
-        print(INVALID_USERNAME)
         print_separator()
         exit()
 
     if not validate_password(password):
         print_separator()
         log_error("Invalid password entered.")
-        print(INVALID_PASSWORD)
         print_separator()
         exit()
 
@@ -69,18 +67,15 @@ if choice == "1":
 
         if has_permission(user, "admin"):
             log_info(f"Admin access granted to {user['username']}")
-            print(ADMIN_ACCESS)
 
         else:
             log_warning(f"Normal user access granted to {user['username']}")
-            print(USER_ACCESS)
 
         print_separator()
 
     else:
         print_separator()
         log_error("Invalid username or password.")
-        print(INVALID_CREDENTIALS)
         print_separator()
 
 
@@ -94,14 +89,12 @@ elif choice == "2":
     if not validate_username(username):
         print_separator()
         log_error("Invalid username entered.")
-        print(INVALID_USERNAME)
         print_separator()
         exit()
 
     if not validate_password(password):
         print_separator()
         log_error("Invalid password entered.")
-        print(INVALID_PASSWORD)
         print_separator()
         exit()
 

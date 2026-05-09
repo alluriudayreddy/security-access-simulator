@@ -9,6 +9,11 @@
             "username": "danam",
             "password": "user678",
             "role": "user"
+        },
+        {
+            "username": "vijay",
+            "password": "vijjudanam",
+            "role": "user"
         }
     ]
 }
