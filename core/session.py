@@ -1,6 +1,6 @@
 current_user = None
 
-def set_current_suer(user):
+def set_current_user(user):
     global current_user
     current_user = user
 
