@@ -7,43 +7,21 @@ from utils.validators import validate_username, validate_password
 from utils.helpers import print_separator, format_username
 from utils.logger import log_info, log_warning, log_error
 
+from interface.menu import show_main_menu
+
 
 print_separator()
 
-choice = input("Choose option (login/register): ").lower()
+show_main_menu()
+
+print_separator()
+
+choice = input("Choose option: ")
 
 print_separator()
 
 
-if choice == "register":
-
-    username = input("Enter Username: ")
-    password = input("Enter Password: ")
-
-    username = format_username(username)
-
-    if not validate_username(username):
-        print_separator()
-        log_error("Invalid username entered.")
-        print_separator()
-        exit()
-
-    if not validate_password(password):
-        print_separator()
-        log_error("Invalid password entered.")
-        print_separator()
-        exit()
-
-    add_user(username, password, "user")
-
-    log_info(f"New user registered: {username}")
-
-    print_separator()
-    print("User registered successfully.")
-    print_separator()
-
-
-elif choice == "login":
+if choice == "1":
 
     username = input("Enter Username: ")
     password = input("Enter Password: ")
@@ -89,7 +67,43 @@ elif choice == "login":
         print_separator()
 
 
+elif choice == "2":
+
+    username = input("Enter Username: ")
+    password = input("Enter Password: ")
+
+    username = format_username(username)
+
+    if not validate_username(username):
+        print_separator()
+        log_error("Invalid username entered.")
+        print_separator()
+        exit()
+
+    if not validate_password(password):
+        print_separator()
+        log_error("Invalid password entered.")
+        print_separator()
+        exit()
+
+    add_user(username, password, "user")
+
+    log_info(f"New user registered: {username}")
+
+    print_separator()
+    print("User registered successfully.")
+    print_separator()
+
+
+elif choice == "3":
+
+    print_separator()
+    print("Exiting system...")
+    print_separator()
+
+
 else:
+
     print_separator()
     print("Invalid option selected.")
     print_separator()
