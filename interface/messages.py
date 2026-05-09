@@ -4,8 +4,8 @@ INVALID_CREDENTIALS = "Invalid username or password."
 
 WELCOME_MESSAGE = "Welcome"
 
-ADMIN_ACCESS_GRANTED = "Admin access granted."
-USER_ACCESS_GRANTED = "Normal user access granted."
+ADMIN_ACCESS = "Admin access granted."
+USER_ACCESS = "Normal user access granted."
 
 REGISTER_SUCCESS = "User registered successfully."
 

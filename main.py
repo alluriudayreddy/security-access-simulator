@@ -9,6 +9,18 @@ from utils.logger import log_info, log_warning, log_error
 
 from interface.menu import show_main_menu
 
+from interface.messages import (
+    INVALID_USERNAME,
+    INVALID_PASSWORD,
+    INVALID_CREDENTIALS,
+    WELCOME_MESSAGE,
+    ADMIN_ACCESS,
+    USER_ACCESS,
+    REGISTER_SUCCESS,
+    EXIT_MESSAGE,
+    INVALID_OPTION
+)
+
 
 print_separator()
 
@@ -31,12 +43,14 @@ if choice == "1":
     if not validate_username(username):
         print_separator()
         log_error("Invalid username entered.")
+        print(INVALID_USERNAME)
         print_separator()
         exit()
 
     if not validate_password(password):
         print_separator()
         log_error("Invalid password entered.")
+        print(INVALID_PASSWORD)
         print_separator()
         exit()
 
@@ -49,21 +63,24 @@ if choice == "1":
 
         print_separator()
 
-        print(f"Welcome {user['username']}")
+        print(f"{WELCOME_MESSAGE} {user['username']}")
 
         print_separator()
 
         if has_permission(user, "admin"):
             log_info(f"Admin access granted to {user['username']}")
+            print(ADMIN_ACCESS)
 
         else:
             log_warning(f"Normal user access granted to {user['username']}")
+            print(USER_ACCESS)
 
         print_separator()
 
     else:
         print_separator()
         log_error("Invalid username or password.")
+        print(INVALID_CREDENTIALS)
         print_separator()
 
 
@@ -77,12 +94,14 @@ elif choice == "2":
     if not validate_username(username):
         print_separator()
         log_error("Invalid username entered.")
+        print(INVALID_USERNAME)
         print_separator()
         exit()
 
     if not validate_password(password):
         print_separator()
         log_error("Invalid password entered.")
+        print(INVALID_PASSWORD)
         print_separator()
         exit()
 
@@ -91,19 +110,19 @@ elif choice == "2":
     log_info(f"New user registered: {username}")
 
     print_separator()
-    print("User registered successfully.")
+    print(REGISTER_SUCCESS)
     print_separator()
 
 
 elif choice == "3":
 
     print_separator()
-    print("Exiting system...")
+    print(EXIT_MESSAGE)
     print_separator()
 
 
 else:
 
     print_separator()
-    print("Invalid option selected.")
+    print(INVALID_OPTION)
     print_separator()
