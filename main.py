@@ -18,7 +18,7 @@ from interface.messages import (
     USER_ACCESS,
     REGISTER_SUCCESS,
     EXIT_MESSAGE,
-    INVALID_OPTION
+    INVALID_CHOICE
 )
 
 
@@ -124,5 +124,5 @@ elif choice == "3":
 else:
 
     print_separator()
-    print(INVALID_OPTION)
+    print(INVALID_CHOICE)
     print_separator()
