@@ -1,7 +1,18 @@
 import json
 
 def load_users():
-    with open("data/users.json", "r") as file:
-        data = json.load(file)
+    try:
+        with open("data/users.json", "r") as file:
+            data = json.load(file)
 
-    return data
+            return data
+    
+    except FileNotFoundError:
+        print("Users file not found.")
+
+        return {"users": []}
+    
+    except json.JSONDecodeError:
+        print("Invalid JSON data.")
+
+        return {"users": []}
