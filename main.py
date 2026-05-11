@@ -1,4 +1,4 @@
-from core.auth import login
+from core.auth import login, failed_attempts, MAX_ATTEMPTS
 from core.session import set_current_user, logout
 from core.permissions import has_permission
 from core.user_manager import add_user, view_all_users, delete_user
@@ -175,6 +175,16 @@ while True:
             print(INVALID_CREDENTIALS)
 
             print_separator()
+
+            print(f"Attempts left: {MAX_ATTEMPTS - failed_attempts}")
+
+            if failed_attempts >= MAX_ATTEMPTS:
+
+                print_separator()
+                print("Too many failed login attempts.")
+                print_separator()
+
+                break
 
 
     elif choice == "2":
