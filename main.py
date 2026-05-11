@@ -1,5 +1,5 @@
 from core.auth import login
-from core.session import set_current_user
+from core.session import set_current_user, logout
 from core.permissions import has_permission
 from core.user_manager import add_user
 
@@ -119,8 +119,19 @@ elif choice == "3":
     print_separator()
 
 
+elif choice == "4":
+
+    logout()
+
+    print_separator()
+    print("Logged out successfully.")
+    print_separator()
+
+
 else:
 
     print_separator()
     print(INVALID_CHOICE)
     print_separator()
+
+
