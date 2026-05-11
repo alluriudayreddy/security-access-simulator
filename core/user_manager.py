@@ -33,3 +33,9 @@ def add_user(username, password, role):
     save_users(data)
 
     return True
+
+
+def view_all_users():
+    users = get_all_users()
+
+    return users

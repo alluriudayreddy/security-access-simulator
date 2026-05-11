@@ -1,14 +1,13 @@
 from core.auth import login
 from core.session import set_current_user, logout
 from core.permissions import has_permission
-from core.user_manager import add_user
+from core.user_manager import add_user, view_all_users
 
 from utils.validators import validate_username, validate_password
 from utils.helpers import print_separator, format_username
 from utils.logger import log_info, log_warning, log_error
 
 from interface.menu import show_main_menu, show_admin_menu
-
 from interface.messages import (
     INVALID_USERNAME,
     INVALID_PASSWORD,
@@ -71,8 +70,14 @@ while True:
 
                 print_separator()
                 show_admin_menu()
+                admin_choice = input("Choose admin option: ")
+                if admin_choice == '1':
+                    users = view_all_users()
+                    print_separator()
+                    for user in users:
+                        print(f"{user['username']} - {user['role']}")
                 print_separator()
-                
+
                 log_info(f"Admin access granted to {user['username']}")
 
             else:
