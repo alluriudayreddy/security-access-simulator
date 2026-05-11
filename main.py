@@ -7,7 +7,7 @@ from utils.validators import validate_username, validate_password
 from utils.helpers import print_separator, format_username
 from utils.logger import log_info, log_warning, log_error
 
-from interface.menu import show_main_menu
+from interface.menu import show_main_menu, show_admin_menu
 
 from interface.messages import (
     INVALID_USERNAME,
@@ -67,6 +67,12 @@ while True:
             print_separator()
 
             if has_permission(user, "admin"):
+                print(ADMIN_ACCESS)
+
+                print_separator()
+                show_admin_menu()
+                print_separator()
+                
                 log_info(f"Admin access granted to {user['username']}")
 
             else:
