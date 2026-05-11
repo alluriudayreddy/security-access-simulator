@@ -98,13 +98,18 @@ elif choice == "2":
         print_separator()
         exit()
 
-    add_user(username, password, "user")
+    result = add_user(username, password, "user")
+    if result:
+        log_info(f"New user registered: {username}")
 
-    log_info(f"New user registered: {username}")
-
-    print_separator()
-    print(REGISTER_SUCCESS)
-    print_separator()
+        print_separator()
+        print(REGISTER_SUCCESS)
+        print_separator()
+    
+    else:
+        print_separator()
+        print("User already exists.")
+        print_separator()
 
 
 elif choice == "3":

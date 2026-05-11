@@ -19,6 +19,10 @@ def find_user(username):
 def add_user(username, password, role):
     data = load_users()
 
+    for user in data["users"]:
+        if user["username"] == username:
+            return False
+
     new_user = {
         "username": username,
         "password": password,
@@ -27,3 +31,5 @@ def add_user(username, password, role):
 
     data["users"].append(new_user)
     save_users(data)
+
+    return True
